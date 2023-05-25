@@ -1,0 +1,18 @@
+1.Install " "pip install devpi-server" in your terminal.
+2.Create a new devpi instance by executing the following command with "devpi-init"
+3.Start the devpi server by running: "devpi-server"
+
+4.Configure the devpi client to use the local server by running: "devpi use http://localhost:3141
+"
+5.Create a user on the local devpi instance by running:
+"devpi user -c nil"
+6.Log in to the local devpi instance using the created user: "devpi login nil"
+7. Create a new index for the package by running: "devpi index -c id1"
+8.Upload the Python package to the local devpi instance using the twine tool (assuming you have the package distribution file, e.g., mypackage-1.0.0.tar.gz):
+"twine upload --repository-url http://localhost:3141/nil/id1/ <distribution-file>"
+9.To install the package from the local devpi instance, create a virtual environment and configure it to use the local devpi instance:
+"python3 -m venv myenv
+source myenv/bin/activate
+pip install --index-url http://localhost:3141/nil/id1/ section1__question3
+"
+please check the image provided
